@@ -1,24 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gacha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gacha" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-Hy-W78">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="モンスターガチャ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-M7-cuX">
+                                <rect key="frame" x="87" y="74.5" width="240" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLc-SS-9CA">
+                                <rect key="frame" x="135" y="520.5" width="144" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ガチャを引く">
+                                    <fontDescription key="titleFontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="2XW-oN-cQd" kind="presentation" id="fbf-8F-sZ5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tsC-Hy-W78" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4n6-Wc-T9i"/>
+                            <constraint firstItem="tsC-Hy-W78" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5ce-KP-hEn"/>
+                            <constraint firstItem="kLc-SS-9CA" firstAttribute="centerY" secondItem="tsC-Hy-W78" secondAttribute="centerY" multiplier="1.2" id="6Vy-em-SjP"/>
+                            <constraint firstItem="MBe-M7-cuX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6zC-6u-TUh"/>
+                            <constraint firstAttribute="bottom" secondItem="tsC-Hy-W78" secondAttribute="bottom" id="DHr-Q3-atZ"/>
+                            <constraint firstItem="MBe-M7-cuX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.2" id="F3c-lX-nfZ"/>
+                            <constraint firstItem="kLc-SS-9CA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VoJ-g3-xX8"/>
+                            <constraint firstItem="tsC-Hy-W78" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bAu-jQ-jML"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="neF-D4-2bG">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="2XW-oN-cQd" customClass="ResultViewController" customModule="Gacha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oEh-iL-Srh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_blue" translatesAutoresizingMaskIntoConstraints="NO" id="62D-bK-j7u">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOu-1l-JJG">
+                                <rect key="frame" x="20.5" y="261.5" width="373" height="373"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dOu-1l-JJG" secondAttribute="height" id="yC5-w8-z2a"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m76-z9-yOk">
+                                <rect key="frame" x="8" y="52" width="84" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="もどる">
+                                    <fontDescription key="titleFontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="back" destination="2XW-oN-cQd" eventType="touchUpInside" id="GO5-vi-c2C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9aZ-lu-Iil"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="62D-bK-j7u" firstAttribute="leading" secondItem="oEh-iL-Srh" secondAttribute="leading" id="BtP-JI-95u"/>
+                            <constraint firstItem="dOu-1l-JJG" firstAttribute="width" secondItem="oEh-iL-Srh" secondAttribute="width" multiplier="0.9" id="P6d-kL-8eL"/>
+                            <constraint firstAttribute="bottom" secondItem="62D-bK-j7u" secondAttribute="bottom" id="YYe-sG-HO7"/>
+                            <constraint firstItem="62D-bK-j7u" firstAttribute="top" secondItem="oEh-iL-Srh" secondAttribute="top" id="YfU-68-fAw"/>
+                            <constraint firstItem="m76-z9-yOk" firstAttribute="leading" secondItem="9aZ-lu-Iil" secondAttribute="leading" constant="8" id="ed6-tp-sRP"/>
+                            <constraint firstItem="dOu-1l-JJG" firstAttribute="centerY" secondItem="oEh-iL-Srh" secondAttribute="centerY" id="lRZ-hD-s3v"/>
+                            <constraint firstItem="m76-z9-yOk" firstAttribute="top" secondItem="9aZ-lu-Iil" secondAttribute="top" constant="8" id="rDc-ok-4Ez"/>
+                            <constraint firstItem="9aZ-lu-Iil" firstAttribute="trailing" secondItem="62D-bK-j7u" secondAttribute="trailing" id="tHP-mW-roM"/>
+                            <constraint firstItem="dOu-1l-JJG" firstAttribute="centerX" secondItem="oEh-iL-Srh" secondAttribute="centerX" id="tX1-VO-eY1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="62D-bK-j7u" id="Q5t-rm-Ve4"/>
+                        <outlet property="monsterImageView" destination="dOu-1l-JJG" id="IVu-2z-NE8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIT-aN-F3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689.85507246376812" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_blue" width="300" height="300"/>
+        <image name="gacha" width="225" height="339"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
